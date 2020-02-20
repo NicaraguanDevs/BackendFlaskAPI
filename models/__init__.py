@@ -1,7 +1,7 @@
 """
 Execute this script every time you wanna make a migration to the database
 """
-from pony.orm import *
+from pony.orm import Database, Required, PrimaryKey
 
 db = Database()
 
@@ -15,9 +15,3 @@ class Movie(db.Entity):
     date = Required(int)
     vote_average = Required(float)
     vote_count = Required(int)
-
-
-db.bind(provider='mysql', host='localhost', user='root', passwd='00.dat', db='Movies')
-
-# Make the migration
-db.generate_mapping(create_tables=True)
