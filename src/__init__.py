@@ -2,7 +2,7 @@ from flask import Flask
 from flask_restful import Api
 from flask_cors import CORS
 from pony.flask import Pony
-from controllers import HelloWorld
+from controllers import *
 
 from config import config
 
@@ -24,3 +24,4 @@ api = Api(app)
 api.add_resource(HelloWorld,
                  '/',
                  '/hello')
+api.add_resource(GetPopular, '/movies/popular')
