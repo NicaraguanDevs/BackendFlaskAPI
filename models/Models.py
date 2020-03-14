@@ -17,3 +17,8 @@ class Movie(db.Entity):
     original_language = Required(str)
     original_title = Required(str)
     popularity = Required(int)
+
+
+class Genre(db.Entity):
+    id = PrimaryKey(int, auto=True)
+    name = Required(str)

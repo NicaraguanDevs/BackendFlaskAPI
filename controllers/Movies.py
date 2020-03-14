@@ -1,17 +1,14 @@
-from flask import Flask
-from pony.flask import Pony
 from flask_restful import Resource
 from pony.orm import *
-from models import db, Movie
+from models import Movie, Genre
 
 
-class HelloWorld(Resource):
-    @staticmethod
-    def get():
-        with db_session:
-            movie = Movie(genres=('action', 'thriller'), tittle='Spider man', overview='This is the description',
-                          poster_path='Some Stuff', date=1998, vote_average=0, vote_count=5)
-        return "Hello, World!"
+class GetMovie(Resource):
+    @db_session
+    def get(self, Id):
+        movie = Movie[Id]
+        dictionary = movie.to_dict()
+        return dictionary
 
 
 class GetPopular(Resource):

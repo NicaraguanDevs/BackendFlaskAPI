@@ -22,5 +22,5 @@ Pony(app)
 api = Api(app)
 
 # endpoints here:
-api.add_resource(HelloWorld, '/', '/hello')
+api.add_resource(GetMovie, '/movie/<Id>')
 api.add_resource(GetPopular, '/movies/popular')

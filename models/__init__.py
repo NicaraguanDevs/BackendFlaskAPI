@@ -1,2 +1,1 @@
-from models.Movie import Movie, db
-from models.Genre import Genre, db
+from models.Models import db, Movie, Genre
