@@ -8,15 +8,15 @@ class Movie(db.Entity):
     adult = Required(bool)
     id = PrimaryKey(int, auto=True)
     genres = Required(StrArray)
-    tittle = Required(str)
+    title = Required(str)
     overview = Required(LongStr)
     poster_path = Required(str)
-    release_date = Required(int)
+    release_date = Required(str)
     vote_average = Required(float)
     vote_count = Required(int)
     original_language = Required(str)
     original_title = Required(str)
-    popularity = Required(int)
+    popularity = Required(float)
 
 
 class Genre(db.Entity):

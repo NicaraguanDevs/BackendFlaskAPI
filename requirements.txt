@@ -13,6 +13,7 @@ MarkupSafe==1.1.1
 pony==0.7.12
 post==2019.4.13
 psycopg2==2.8.4
+psycopg2-binary==2.8.4
 public==2019.4.13
 PyMySQL==0.9.3
 pytz==2019.3
