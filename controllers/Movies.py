@@ -22,7 +22,7 @@ class GetMovie(Resource):
         except:
             return {'status': 'Película no encontrada', 'movie': {}}, 404
         else:
-            return {'status': 'Success', 'movie': movie.to_dict()}, 200
+            return {'status': 'Success', 'movie': movie.to_dict(with_lazy=True)}, 200
 
 
 class GetPopular(Resource):
@@ -39,7 +39,7 @@ class GetPopular(Resource):
                         (page - 1) * 20:page * 20]  # 20 most popular Movies
 
             for movie in query:
-                popular_movies.append(movie.to_dict())
+                popular_movies.append(movie.to_dict(with_lazy=True))
         except:
             return {'status': 'Pagina no encontrada'}, 404
         else:
