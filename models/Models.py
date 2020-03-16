@@ -4,7 +4,7 @@ db = Database()
 
 
 # Set the models
-class Movie(db.Entity):
+class Movies(db.Entity):
     adult = Required(bool)
     id = PrimaryKey(int, auto=True)
     genres = Required(StrArray)
@@ -19,6 +19,6 @@ class Movie(db.Entity):
     popularity = Required(float)
 
 
-class Genre(db.Entity):
+class Genres(db.Entity):
     id = PrimaryKey(int, auto=True)
     name = Required(str)

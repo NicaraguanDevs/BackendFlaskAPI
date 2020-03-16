@@ -1,1 +1,1 @@
-from models.Models import db, Movie, Genre
+from models.Models import db, Movies, Genres
